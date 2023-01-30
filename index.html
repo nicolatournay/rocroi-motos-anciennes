@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.min.css">
+    <title>Rocroi 2023 | Motos Anciennes</title>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><img src="img/logo.jpg" alt="logo"></li>
+        </ul>
+        <ul>
+            <li><a href="#photos" class="secondary">Photos</a></li>
+            <li><a href="#infos" class="secondary">Infos</a></li>
+            <li><a href="#infos" class="secondary">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="container text-center">
+        <section>
+            <hgroup>
+                <h1>Découverte du tracé de l'enduro de Rocroi pour <span class="title">motos anciennes</span> (pré 98)</h1>
+                <h2>Le 20 mai 2023 | Places limitées | Inscriptions ouvertes jusqu'au 17 mai</h2>
+            </hgroup>
+        </section>
+        <p>Parcours de <strong>85 km</strong> en tout terrain dans la <strong>forêt Ardennaise</strong>.</p>
+        <p><strong>Petits groupes</strong> avec guide, <strong>assistance technique</strong>, et <strong>ravitaillements</strong> pour pilotes et motos</p>
+        <a href="#formulaire" role="button">Je m'inscris</a>
+    </header>
+    <main class="container">
+        <section id="formulaire">
+            <form action="">
+                <fieldset>
+                    <legend><h3>Pilote</h3></legend>
+                    <div class="grid">
+                        <label for="nom">
+                            Nom
+                            <input type="text" name="nom" required>
+                        </label>
+                        <label for="prenom">
+                            Prénom
+                            <input type="text" name="prenom" required>
+                        </label>
+                    </div>
+                    <div class="grid">
+                        <label for="rue">
+                            Rue
+                            <input type="text" name="rue" required>
+                        </label>
+                        <label for="numero">
+                            n°
+                            <input type="number" name="numero" required>
+                        </label>
+                    </div>
+                    <div class="grid">
+                        <label for="localite">
+                            Localité
+                            <input type="text" name="localite">
+                        </label>
+                        <label for="code_postal">
+                            Code postal
+                            <input type="number" name="code_postal">
+                        </label>
+                    </div>
+                    <div class="grid">
+                        <label for="tel_gsm">
+                            Tél/GSM
+                            <input type="tel" name="tel_gsm" required>
+                        </label>
+                        <label for="email">
+                            Mail
+                            <input type="email" name="email" required>
+                        </label>
+                    </div>
+                    <label for="numero_de_permis">
+                        N° de permis de conduire
+                        <input type="text" name="numero_de_permis" required>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend><h3>Moto</h3></legend>
+                    <div class="grid">
+                        <label for="marque">
+                            Marque
+                            <input type="text" name="marque" required>
+                        </label>
+                        <label for="type">
+                            Type
+                            <input type="text" name="type" required>
+                        </label>
+                        <label for="annee">
+                            Année
+                            <input type="number" min="1900" max="1998" step="1" value="1998" name="annee" required/>
+                        </label>
+                    </div>
+                    <div class="grid">
+                        <label for="immatriculation">
+                            Immatriculation
+                            <input type="text" name="immatriculation" required>
+                        </label>
+                        <label for="assurance">
+                            Assurance
+                            <input type="text" name="assurance" required>
+                        </label>
+                        <label for="numero_police">
+                            Numéro de police
+                            <input type="text" name="numero_police" required>
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <label for="termes">
+                        <input type="checkbox" id="terms" name="termes" required>
+                        J'atteste que les renseignements ci-dessus sont exacts et que ma moto est conforme aux règles de circulation routière en vigueur.
+                    </label>
+                </fieldset>
+                <input type="submit" value="Je m'inscris">
+            </form>
+        </section>
+        <section id="photos" class="text-center">
+            <h2>Photos des années précédentes</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="img/img_1.JPG" alt="img_1"></div>
+                  <div class="swiper-slide"><img src="img/img_2.JPG" alt="img_2"></div>
+                  <div class="swiper-slide"><img src="img/img_3.JPG" alt="img_3"></div>
+                  <div class="swiper-slide"><img src="img/img_4.JPG" alt="img_4"></div>
+                  <div class="swiper-slide"><img src="img/img_5.JPG" alt="img_5"></div>
+                  <!-- <div class="swiper-slide"><img src="img/img-6.JPG" alt="img_6"></div> -->
+                  <!-- <div class="swiper-slide"><img src="img/img_7.JPG" alt="img_7"></div> -->
+                  <!-- <div class="swiper-slide"><img src="img/img_8.JPG" alt="img_8"></div> -->
+                  <!-- <div class="swiper-slide"><img src="img/img_9.JPG" alt="img_9"></div> -->
+                  <!-- <div class="swiper-slide"><img src="img/img_10.JPG" alt="img_10"></div> -->
+                  <!-- <div class="swiper-slide"><img src="img/img_11.JPG" alt="img_11"></div> -->
+                  <div class="swiper-slide"><img src="img/img_12.JPG" alt="img_12"></div>
+                  <!-- <div class="swiper-slide"><img src="img/img_13.JPG" alt="img_13"></div> -->
+                  <div class="swiper-slide"><img src="img/img_14.JPG" alt="img_14"></div>
+                  <div class="swiper-slide"><img src="img/img_15.JPG" alt="img_15"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section id="infos">
+            <h2 class="text-center">Infos pratiques</h2>
+            <div class="grid">
+                <div>
+                    <ul>
+                        <li><strong>Accueil et inscriptions dès 8h00</strong>, à <strong>08260 Mon Idée (FR) route de Rocroi</strong> (au croisement de la D8043 et de la D877).</li>
+                        <li><stro>Départ à 9h30.</stro> Retour dans l'après-midi.</li>
+                        <li><strong>PAF 35€</strong> : affiliation au moto-club, casse-croûte de midi et assistance. À verser sur le compte <strong>BE79 0018 3706 6933</strong></li>
+                    </ul>
+                    <h3>Contact</h3>
+                    <ul class="contact">
+                        <li>Pierre Tournay</li>
+                        <li><a href="tel:+32496509039" class="secondary"><i class="fa-solid fa-phone"></i> 0032 (0)496 509 039</a></li>
+                        <li><a href="mailto:pierre.lesmotos@gmail.com" class="secondary"><i class="fa-solid fa-envelope"></i> pierre.lesmotos@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2571.4709336466162!2d4.433709915691237!3d49.871182179399604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e9ff421b2e40b5%3A0x7873d45ecfaaeb4c!2sRte%20de%20Rocroi%2C%2008260%20Maubert-Fontaine%2C%20France!5e0!3m2!1sfr!2sbe!4v1675089115637!5m2!1sfr!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer class="text-center container">
+        2023 | Made with <i class="fa-solid fa-heart"></i> by <a href="https://github.com/nicolatournay" target="_blank" class="contrast"><i class="fa-brands fa-github"></i> Nicola Tournay <i class="fa-solid fa-arrow-up-right-from-square"></i></a> 
+    </footer>
+    <script src="https://kit.fontawesome.com/8f9223cc2c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+    </script>
+</body>
+</html>
