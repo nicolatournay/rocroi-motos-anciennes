@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>Rocroi 2023 | Motos Anciennes</title>
 </head>
 <body>
@@ -32,53 +33,54 @@
         <a href="#formulaire" role="button">Je m'inscris</a>
     </header>
     <main class="container">
+        <!-- Formulaire d'inscription -->
         <section id="formulaire">
-            <form action="">
+            <form x-data="contactForm()" @submit.prevent="submitForm">
                 <fieldset>
                     <legend><h3>Pilote</h3></legend>
                     <div class="grid">
                         <label for="nom">
                             Nom
-                            <input type="text" name="nom" required>
+                            <input type="text" name="nom" required x-model="formData.nom">
                         </label>
                         <label for="prenom">
                             Prénom
-                            <input type="text" name="prenom" required>
+                            <input type="text" name="prenom" required x-model="formData.prenom">
                         </label>
                     </div>
                     <div class="grid">
                         <label for="rue">
                             Rue
-                            <input type="text" name="rue" required>
+                            <input type="text" name="rue" required x-model="formData.rue">
                         </label>
                         <label for="numero">
                             n°
-                            <input type="number" name="numero" required>
+                            <input type="number" name="numero" required x-model="formData.numero">
                         </label>
                     </div>
                     <div class="grid">
                         <label for="localite">
                             Localité
-                            <input type="text" name="localite">
+                            <input type="text" name="localite" x-model="formData.localite">
                         </label>
                         <label for="code_postal">
                             Code postal
-                            <input type="number" name="code_postal">
+                            <input type="number" name="code_postal" x-model="formData.code_postal">
                         </label>
                     </div>
                     <div class="grid">
                         <label for="tel_gsm">
                             Tél/GSM
-                            <input type="tel" name="tel_gsm" required>
+                            <input type="tel" name="tel_gsm" required x-model="formData.tel_gsm">
                         </label>
                         <label for="email">
                             Mail
-                            <input type="email" name="email" required>
+                            <input type="email" name="email" required x-model="formData.email">
                         </label>
                     </div>
                     <label for="numero_de_permis">
                         N° de permis de conduire
-                        <input type="text" name="numero_de_permis" required>
+                        <input type="text" name="numero_de_permis" required x-model="formData.numero_de_permis">
                     </label>
                 </fieldset>
                 <fieldset>
@@ -86,29 +88,29 @@
                     <div class="grid">
                         <label for="marque">
                             Marque
-                            <input type="text" name="marque" required>
+                            <input type="text" name="marque" required x-model="formData.marque">
                         </label>
                         <label for="type">
                             Type
-                            <input type="text" name="type" required>
+                            <input type="text" name="type" required x-model="formData.type">
                         </label>
                         <label for="annee">
                             Année
-                            <input type="number" min="1900" max="1998" step="1" value="1998" name="annee" required/>
+                            <input type="number" min="1900" max="1998" step="1" value="1998" name="annee" required x-model="formData.type"/>
                         </label>
                     </div>
                     <div class="grid">
                         <label for="immatriculation">
                             Immatriculation
-                            <input type="text" name="immatriculation" required>
+                            <input type="text" name="immatriculation" required x-model="formData.immatriculation">
                         </label>
                         <label for="assurance">
                             Assurance
-                            <input type="text" name="assurance" required>
+                            <input type="text" name="assurance" required x-model="formData.assurance">
                         </label>
                         <label for="numero_police">
                             Numéro de police
-                            <input type="text" name="numero_police" required>
+                            <input type="text" name="numero_police" required x-model="formData.numero_police">
                         </label>
                     </div>
                 </fieldset>
@@ -118,9 +120,11 @@
                         J'atteste que les renseignements ci-dessus sont exacts et que ma moto est conforme aux règles de circulation routière en vigueur.
                     </label>
                 </fieldset>
-                <input type="submit" value="Je m'inscris">
+                <input type="submit" :disabled="formLoading" x-text="buttonText">
             </form>
+            <div x-text="formMessage"></div>
         </section>
+        <!-- Photos -->
         <section id="photos" class="text-center">
             <h2>Photos des années précédentes</h2>
             <div class="swiper mySwiper">
@@ -146,6 +150,7 @@
                 <div class="swiper-pagination"></div>
             </div>
         </section>
+        <!-- Infos + contact -->
         <section id="infos">
             <h2 class="text-center">Infos pratiques</h2>
             <div class="grid">
@@ -172,7 +177,9 @@
     </footer>
     <script src="https://kit.fontawesome.com/8f9223cc2c.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- SwiperJS & contactForm -->
     <script>
+        // Swiper jS
         var swiper = new Swiper(".mySwiper", {
           pagination: {
             el: ".swiper-pagination",
@@ -183,6 +190,71 @@
             prevEl: ".swiper-button-prev",
           },
         });
+        // contactForm()
+        const FORM_URL = "https://submit-form.com/9ruMnIuy";
+        function contactForm() {
+            return {
+                formData: {
+                    nom: "",
+                    prenom: "",
+                    rue: "",
+                    numero: "",
+                    localite: "",
+                    code_postal: "",
+                    tel_gsm: "",
+                    email: "",
+                    numero_de_permis: "",
+                    marque: "",
+                    type: "",
+                    annee: "",
+                    immatriculation: "",
+                    assurance: "",
+                    numero_police: "",
+                },
+                formMessage: "",
+                formLoading: false,
+                buttonText: "Submit",
+                submitForm() {
+                    console.log(JSON.stringify(this.formData));
+                    this.formMessage = "";
+                    this.formLoading = false;
+                    this.buttonText = "En cours d'envoi...";
+                    fetch(FORM_URL, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Accept: "application/json",
+                        },
+                        body: JSON.stringify(this.formData),
+                    })
+                        .then(()=> {
+                            this.formData.nom = "";
+                            this.formData.prenom = "";
+                            this.formData.rue = "";
+                            this.formData.numero = "";
+                            this.formData.localite = "";
+                            this.formData.code_postal = "";
+                            this.formData.tel_gsm = "";
+                            this.formData.email = "";
+                            this.formData.numero_de_permis = "";
+                            this.formData.marque = "";
+                            this.formData.type = "";
+                            this.formData.annee = "";
+                            this.formData.immatriculation = "";
+                            this.formData.assurance = "";
+                            this.formData.numero_police = "";
+                            this.formMessage = "Merci pour votre inscription !";
+                        })
+                        .catch(() => {
+                                this.formMessage = "Echec. réessayez plus tard.";
+                        })
+                        .finally(() => {
+                            this.formLoading = false;
+                            this.buttonText = "Je m'inscris";
+                    });
+                },
+            };
+        };
     </script>
 </body>
 </html>
